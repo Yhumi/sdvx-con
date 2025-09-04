@@ -11,6 +11,9 @@
     in
     {
       devShell = with pkgs; mkShell {
+        packages = [
+          tio
+        ];
         buildInputs = [
           cmake
           gcc

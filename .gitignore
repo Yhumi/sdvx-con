@@ -1,5 +1,6 @@
 #Ignore cmake outputs
 build/
+bin/
 
 #Ignore dev stuff
 .direnv/

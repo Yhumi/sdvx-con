@@ -7,14 +7,18 @@ project(sdvx C CXX ASM)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../bin)
+
 pico_sdk_init()
 
 add_executable(sdvx
     src/sdvx.c
+    src/button.c
 )
 
 pico_enable_stdio_usb(sdvx 1)
 pico_enable_stdio_uart(sdvx 1)
 pico_add_extra_outputs(sdvx)
 
-target_link_libraries(sdvx pico_stdlib)
+target_link_libraries(sdvx PRIVATE 
+    pico_stdlib pico_multicore hardware_pwm)
