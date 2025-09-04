@@ -1,5 +1,6 @@
 #Ignore cmake outputs
 build/
 
-#Ignore direnv dir
+#Ignore dev stuff
 .direnv/
+.vscode/
